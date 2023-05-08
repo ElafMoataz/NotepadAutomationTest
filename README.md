@@ -1,11 +1,15 @@
 # NotepadAutomationTest
-Elaf-Moataz
-Confidential Challenge - Automation Testing
+
+Author: Elaf-Moataz
+
+Project: Confidential Challenge - Automation Testing
 
 Description 
+
 This repository contains a sample project that demonstrates how to use WinAppDriver to automate testing of the Windows Notepad application.
 
 Prerequisites
+
 - Windows 11
 - Notepad.exe is installed on the device in default location
 - Intellij IDE
@@ -14,6 +18,7 @@ Prerequisites
 - TestNG framework
 
 Getting Started
+
 To get started with this project, follow these steps:
 
 1- Clone this repository to your local machine.
@@ -25,4 +30,5 @@ To get started with this project, follow these steps:
 4- Run the tests from NotepadTests class.
 
 Contributing
+
 Contributions are welcome! If you find a bug or have a feature request, please open an issue.
