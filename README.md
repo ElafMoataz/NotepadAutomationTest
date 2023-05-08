@@ -15,9 +15,13 @@ Prerequisites
 
 Getting Started
 To get started with this project, follow these steps:
+
 1- Clone this repository to your local machine.
+
 2- Open the solution file in Intellij.
+
 3- Start the WinAppDriver server.
+
 4- Run the tests from NotepadTests class.
 
 Contributing
