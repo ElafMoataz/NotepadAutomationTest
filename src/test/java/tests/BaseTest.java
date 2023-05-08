@@ -25,9 +25,9 @@ public class BaseTest {
             throw new RuntimeException(e);
         }
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platformName", "Windows");
-        capabilities.setCapability("deviceName", "Elaf");
-        capabilities.setCapability("app","C:\\Windows\\System32\\notepad.exe");
+        capabilities.setCapability("platformName", System.getProperty("platformName"));
+        capabilities.setCapability("deviceName", System.getProperty("deviceName"));
+        capabilities.setCapability("app",System.getProperty("notepadPath"));
         try {
             driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
         } catch (MalformedURLException e) {
