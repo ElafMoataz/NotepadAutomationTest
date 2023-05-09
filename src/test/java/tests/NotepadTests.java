@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.NotepadPage;
@@ -15,21 +16,22 @@ public class NotepadTests extends BaseTest {
         notepadPage = new NotepadPage(driver);
         settingsPage = new SettingsPage(driver);
     }
+    @BeforeTest
+    public void resetAssertObject(){
+        softAssert = new SoftAssert();
+    }
     @Test
-    public void validateThatTextIsAddedWithCorrectFontConfigurationsAfterSavingNotepad(){
+    public void validateThatTextIsAddedWithCorrectFontConfigurations(){
         String desiredStyle= "Bold";
         String desiredSize= "30";
         String documentText= "Hello";
         String notepadName= "Notepad automation test";
 
-        softAssert = new SoftAssert();
         notepadPage.openSettingsPage();
         settingsPage.changeFontStyle(desiredStyle);
         settingsPage.changeFontSize(desiredSize);
-        String fontStyle= settingsPage.getFontStyle();
-        String fontSize= settingsPage.getFontSize();
-        softAssert.assertEquals(fontStyle, desiredStyle);
-        softAssert.assertEquals(fontSize, desiredSize);
+        softAssert.assertEquals(settingsPage.getFontStyle(), desiredStyle);
+        softAssert.assertEquals(settingsPage.getFontSize(), desiredSize);
         settingsPage.navigateToNotepadPage();
         notepadPage.enterTextInNotes(documentText);
         softAssert.assertTrue(notepadPage.getNotepadText().contains(documentText));
