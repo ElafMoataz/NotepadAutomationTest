@@ -20,8 +20,8 @@ public class NotepadTests extends BaseTest {
     public void resetAssertObject(){
         softAssert = new SoftAssert();
     }
-    @Test
-    public void validateThatTextIsAddedWithCorrectFontConfigurations(){
+    @Test(groups = "sanity")
+    public void validateThatNotepadIsSavedWithCorrectNameAndFontConfigurationsAndBody(){
         String desiredStyle= "Bold";
         String desiredSize= "30";
         String documentText= "Hello";
